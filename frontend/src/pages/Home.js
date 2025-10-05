@@ -19,7 +19,7 @@ const Home = () => {
             
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
               Empower your future with world-class online courses. 
-              Learn from the best creators, earn certificates, and transform your career.
+              Learn from the best creator, earn certificates, and transform your career.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
