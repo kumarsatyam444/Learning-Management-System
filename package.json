@@ -1,0 +1,19 @@
+{
+  "name": "microcourses-lms",
+  "version": "1.0.0",
+  "description": "Full-stack Learning Management System with MERN stack",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "seed": "cd backend && npm run seed",
+    "dev-backend": "cd backend && npm run dev",
+    "dev-frontend": "cd frontend && npm start",
+    "start-backend": "cd backend && npm start",
+    "start-worker": "cd backend && npm run worker",
+    "build-frontend": "cd frontend && npm run build"
+  },
+  "keywords": ["lms", "education", "mern", "learning", "courses"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: microcourses-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REDIS_URL
+        sync: false
+      - key: CERTIFICATE_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+
+  - type: worker
+    name: microcourses-worker
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm run worker
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_URL
+        sync: false
+
+  - type: web
+    name: microcourses-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://microcourses-backend.onrender.com/api
