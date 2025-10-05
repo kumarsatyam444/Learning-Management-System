@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const router = express.Router();
 const cors = require('cors');
 const connectDB = require('./config/database');
 const { connectRedis } = require('./config/redis');
@@ -17,6 +18,11 @@ const enrollmentRoutes = require('./routes/enrollment');
 const certificateRoutes = require('./routes/certificates');
 
 const app = express();
+
+router.get('/', (req, res) => {
+  res.json({ message: 'Admin API is working 🚀' });
+});
+
 
 app.use(cors());
 app.use(express.json());
@@ -57,3 +63,4 @@ const startServer = async () => {
 };
 
 startServer();
+module.exports = router;
