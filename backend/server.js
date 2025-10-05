@@ -19,13 +19,15 @@ const certificateRoutes = require('./routes/certificates');
 
 const app = express();
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Admin API is working 🚀' });
-});
 
 
 app.use(cors());
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({ message: "Backend API is live 🚀", status: "ok" });
+});
+
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
@@ -63,4 +65,4 @@ const startServer = async () => {
 };
 
 startServer();
-module.exports = router;
+
